@@ -7,6 +7,21 @@ description: Establish evidence-supported atom correspondences for enzymatic rea
 
 Default to mapping every atom represented in the supplied SMILES: all heavy atoms (C, O, N, P, S, etc.) and explicit hydrogen atoms, including isotopic hydrogen. Explicit H means a separate [H], [2H], etc. atom; H counts within [CH3] or similar brackets do not receive independent map IDs. Keep implicit hydrogens implicit; do not expand or add atoms or components unless the user asks. Use a carbon-only mapping only when requested or when a complete candidate cannot be justified, and state why the output is partial. Separate complete mapping coverage from mechanistic support for each correspondence. This skill requires access to biochemical sources and, for automated checks, an environment containing RDKit. It is an evidence-guided agent workflow, not a trained prediction model.
 
+## Scientific context and responsibility
+
+An atom map states which represented reactant atoms correspond to which product
+atoms. The scientific task is to justify those identities through reaction
+chemistry, not merely to produce a valid SMILES string or minimize graph edits.
+Correspondence coverage, mechanistic evidence and unresolved symmetry are separate
+aspects of the result.
+
+This skill supports standalone enzymatic reactions and can provide scientific
+analysis to a metabolic-network review workflow. In carbon-tracing applications,
+its correspondences are inputs to later network calculations: reaction-local map
+numbers are distinct from carbon-source labels. It does not choose culture
+conditions, solve metabolic fluxes or calculate source contributions. Standalone
+use does not require the carbon-tracing project.
+
 ## Interpret the supplied reaction
 
 Accept reactant>>product SMILES and optional EC numbers, reaction names, organism information, or database identifiers. Identify the compounds and likely enzyme reaction before requesting annotations. Ask when unresolved identities or competing mechanisms would materially change the mapping.
