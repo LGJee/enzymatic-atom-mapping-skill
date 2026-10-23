@@ -127,7 +127,7 @@ source citations when reusing the evidence notes.
 
 Disposable AI workflow/setup/review/reaction files belong in the selected
 project's `.cache/ai/`, grouped by stage and run. Final Excel stays in the case
-output directory; final readable reports stay in its reports/ subfolder. Original
+output directory; final readable reports stay in its Ai_reports/ subfolder. Original
 models, reproducible scripts/plans, adopted chemistry CSVs and scientific evidence
 archives remain outside cache. After runs stop, users may delete .cache/ai/;
 this drops temporary progress without deleting final results. Existing work is
