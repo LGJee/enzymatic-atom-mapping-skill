@@ -22,6 +22,28 @@ numbers are distinct from carbon-source labels. It does not choose culture
 conditions, solve metabolic fluxes or calculate source contributions. Standalone
 use does not require the carbon-tracing project.
 
+## Disposable AI work and final files
+
+Use `<project>/.cache/ai/<stage>/<run>/` for disposable AI process files:
+research downloads, extracted inputs, proposals, staging workbooks, retry reports,
+logs, validation output and continuation JSON. Stages may be workflow, setup,
+review, structures or enzymatic-mapping. Reuse the orchestrator's supplied run
+folder when available. Do not put these process files in the results root.
+
+Keep final workbooks in the selected case output directory and readable final
+reports under its `reports/` subfolder. Preserve reproducible preparation scripts
+and analysis plans with the case. Downloaded models, adopted AI/manual chemistry
+CSVs and immutable evidence supporting adopted records remain in `data/`; they
+are not disposable cache. Do not move the only copy of a prior final delivery or
+its scientific evidence into cache. A brief same-filesystem temporary file for
+atomic final publication is allowed and must be cleaned up.
+
+Users can remove `.cache/ai/` after its runs have stopped. This loses temporary
+progress and downloaded research pages, not formal results or adopted evidence.
+Do not automatically delete active runs, clear shared scientific tables, relocate
+old case files or change the computation project's own caches as a side effect.
+For standalone use without a project, use `.cache/ai/` under the chosen work folder.
+
 ## Interpret the supplied reaction
 
 Accept reactant>>product SMILES and optional EC numbers, reaction names, organism information, or database identifiers. Identify the compounds and likely enzyme reaction before requesting annotations. Ask when unresolved identities or competing mechanisms would materially change the mapping.
@@ -48,6 +70,12 @@ LocalMapper, RXNMapper, and EnzymeMap may supply candidates if available. Compar
 Run the validator with --mapped for a candidate. Use --scope all (the default) for all represented atoms, including explicit H. Use --scope heavy or --scope carbon only for an explicitly limited check. Read its warnings even when it exits successfully. The validator cannot establish catalytic mechanism, choose among symmetry-equivalent maps, or certify experimental correctness.
 
 ## Deliver a reproducible result
+
+Return final scientific analysis to the caller; do not create an extra final
+report per reaction when a network-review caller already owns the model report.
+Keep temporary validator files, proposed maps and retrieved pages in its supplied
+AI cache folder. The caller must archive the evidence supporting adopted maps
+with its durable scientific records before cache cleanup.
 
 Use English and include:
 1. Evidence status: evidence-supported, partially supported, or unresolved, with the scope of that status.

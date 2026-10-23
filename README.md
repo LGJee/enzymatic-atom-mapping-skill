@@ -122,3 +122,13 @@ Tests are structural regression checks, not a biochemical accuracy benchmark.
 No accuracy percentage is claimed. Third-party data and mapper models are
 not included. The original skill and checker use the MIT License; retain
 source citations when reusing the evidence notes.
+
+## AI work cache
+
+Disposable AI workflow/setup/review/reaction files belong in the selected
+project's `.cache/ai/`, grouped by stage and run. Final Excel stays in the case
+output directory; final readable reports stay in its reports/ subfolder. Original
+models, reproducible scripts/plans, adopted chemistry CSVs and scientific evidence
+archives remain outside cache. After runs stop, users may delete .cache/ai/;
+this drops temporary progress without deleting final results. Existing work is
+not automatically relocated, and active caches are never automatically cleared.
