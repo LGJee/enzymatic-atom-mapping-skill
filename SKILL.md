@@ -86,6 +86,23 @@ Use English and include:
 
 When no unique assignment is supported, return what is established and the alternatives or missing evidence. Do not fabricate confidence percentages or describe the entire reaction as verified when only its carbon skeleton was checked.
 
+## Current carbon-tracing integration
+
+When called by carbon-tracing-review-skill, return reaction-local correspondences
+and evidence to that caller; it owns workbook updates, durable records and the
+subsequent EMU-only step3. The current network solver uses fixed-flux single-carbon
+origin balances, not enumeration or full isotopomer simulation. Do not invoke
+rounds, create a Summary sheet or infer source fractions from atom map numbers.
+Standalone reaction input/output and the all-represented-atom validation scope
+remain unchanged.
+
+A supplied dummy atom (* or [*]) represents an unspecified region, not a known
+carbon or a defined carrier identity. Preserving/numbering that graph node does
+not establish the unknown group's atoms or its transfer. Explain known-position
+coverage and unresolved regions to the review caller; never fill them to force a
+complete molecular-source result. Do not redistribute a later solver's Unknown
+fractions or change fluxes as part of correspondence review.
+
 ## Maintain and publish this skill
 
 When the user requests changes to this installed skill, finish and validate the changes, synchronize them to the default branch of https://github.com/LGJee/enzymatic-atom-mapping-skill, and verify the published files. This workflow applies to skill maintenance, not reaction analysis.

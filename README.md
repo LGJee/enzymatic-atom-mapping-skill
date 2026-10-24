@@ -132,3 +132,19 @@ models, reproducible scripts/plans, adopted chemistry CSVs and scientific eviden
 archives remain outside cache. After runs stop, users may delete .cache/ai/;
 this drops temporary progress without deleting final results. Existing work is
 not automatically relocated, and active caches are never automatically cleared.
+
+## Carbon-tracing integration
+
+The scientific reaction interface remains independent of the network solver.
+For the current EMU-only carbon-tracing project, return correspondences/evidence
+to carbon-tracing-review-skill; that caller owns workbook changes and step3.
+Reaction-local map IDs are not source labels or source-contribution fractions.
+Explicit dummy nodes do not establish the unspecified group's carbon origin.
+No model/flux calculation or new project dependency is added to standalone use.
+
+Validation on 2026-10-24 used the current local EMU-only development interface.
+Official skill metadata checks passed. Tests were isolated and did not modify
+reference plans, model files or existing formal results. This does not certify
+biochemical accuracy, a fresh deployment, older public project versions or
+cross-platform execution. The computation project is not published by this skill
+maintenance task.
